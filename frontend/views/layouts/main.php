@@ -34,10 +34,11 @@ AppAsset::register($this);
     <meta property="og:image" content="" />
     <meta property="og:url" content="" />
     <meta property="og:type" content="article" />
-    <link href="https://fonts.googleapis.com/css?family=Raleway:400,400i,600,700,700i&amp;subset=latin-ext"
-        rel="stylesheet">
-    <!-- Website Title -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" />
     <title>O'zbeksiton teatir arboblari uyishmasi </title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
     <?php $this->registerCsrfMetaTags() ?>
     <?php $this->head() ?>
 </head>
@@ -48,7 +49,9 @@ AppAsset::register($this);
     <?= $content ?>
     <?= \frontend\widgets\FooterWidget::widget() ?>
     <?php $this->endBody() ?>
+    <script !src="">
 
+    </script>
 </body>
 
 </html>

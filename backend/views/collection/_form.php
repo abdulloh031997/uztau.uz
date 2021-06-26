@@ -7,17 +7,18 @@ use yii\widgets\ActiveForm;
 /* @var $this yii\web\View */
 /* @var $model common\models\Collection */
 /* @var $form yii\widgets\ActiveForm */
+
 $languages = active_langauges();
-$langs_array = ArrayHelper::map(\common\models\Language::find()->where(['status'=>1])->all(), 'lang_code', 'name');
-$data = ArrayHelper::map(\common\models\CollectionCategory::find()->where(['status'=>1])->all(), 'id', 'name');
+$langs_array = ArrayHelper::map(\common\models\Language::find()->where(['status' => 1])->all(), 'lang_code', 'name');
+$data = ArrayHelper::map(\common\models\CollectionCategory::find()->where(['status' => 1])->all(), 'id', 'name');
 if ($model->image == '') {
     $path = 'https://guide-group.ru/uploads/posts/2018-09/1535899253_404-image-2x.png';
 } else {
     $path = '@fronted_domain/' . $model->image;
 }
 if ($model->file != '') {
-    $path1 = Yii::getAlias('@fronted_domain'). '/' . $model->file;
-}else{
+    $path1 = Yii::getAlias('@fronted_domain') . '/' . $model->file;
+} else {
     $path1 = '';
 }
 ?>
@@ -28,94 +29,71 @@ if ($model->file != '') {
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-8">
-            <ul class="nav nav-tabs nav-tabs-custom nav-justified mb-3" role="tablist">
-                <?php foreach ($languages as $index => $lang): ?>
+                <ul class="nav nav-tabs nav-tabs-custom nav-justified mb-3" role="tablist">
+                    <?php foreach ($languages as $index => $lang) : ?>
                     <li class="nav-item">
-                        <a class="nav-link <?=$index== 0 ? 'active' : '' ?>" data-toggle="tab" id="<?=$lang->lang_code?>" href="#general<?=$lang->lang_code?>" role="tab">
+                        <a class="nav-link <?= $index == 0 ? 'active' : '' ?>" data-toggle="tab"
+                            id="<?= $lang->lang_code ?>" href="#general<?= $lang->lang_code ?>" role="tab">
                             <span class="d-block d-sm-none"><i class="fas fa-home"></i></span>
-                            <span class="d-none d-sm-block"><?=$lang->name?></span>
+                            <span class="d-none d-sm-block"><?= $lang->name ?></span>
                         </a>
                     </li>
-                <?php endforeach;?>
-            </ul>
+                    <?php endforeach; ?>
+                </ul>
                 <div class="tab-content">
                     <!-- Tab item -->
-                    <?php foreach ($languages as $index => $lang): ?>
+                    <?php foreach ($languages as $index => $lang) : ?>
                     <?php if (!$model->isNewRecord) {
-                        $getValue = \common\models\Collection::getValue($_GET['id'], $lang->lang_code);
-                    }?>
+                            $getValue = \common\models\Collection::getValue($_GET['id'], $lang->lang_code);
+                        } ?>
 
-                        <div class="tab-pane <?=$index== 0 ? 'active' : '' ?>" id="general<?=$lang->lang_code?>" role="tabpanel">
-                            <div class="row">
-                                <div class="col-md-12">
-                                    <div class="form-group required-field">
-                                        <?= $form->field($model, "name[$lang->lang_code]")
-                                            ->textInput(['value'=>(!$model->isNewRecord)?$getValue['name']:''])
-                                            ->label('Name '.$lang->name)
+                    <div class="tab-pane <?= $index == 0 ? 'active' : '' ?>" id="general<?= $lang->lang_code ?>"
+                        role="tabpanel">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="form-group required-field">
+                                    <?= $form->field($model, "name[$lang->lang_code]")
+                                            ->textInput(['value' => (!$model->isNewRecord) ? $getValue['name'] : ''])
+                                            ->label('Name ' . $lang->name)
                                         ?>
-                                    </div>
                                 </div>
-                                <div class="col-md-12">
-                                    <div class="form-group required-field">
-                                        <?= $form->field($model, "author[$lang->lang_code]")
-                                            ->textInput(['value'=>(!$model->isNewRecord)?$getValue['author']:''])
-                                            ->label('Author '.$lang->name)
+                            </div>
+                            <div class="col-md-12">
+                                <div class="form-group required-field">
+                                    <?= $form->field($model, "author[$lang->lang_code]")
+                                            ->textInput(['value' => (!$model->isNewRecord) ? $getValue['author'] : ''])
+                                            ->label('Author ' . $lang->name)
                                         ?>
-                                    </div>
                                 </div>
-                                <div class="col-md-12">
-                                    <div class="form-group required-field">
-                                        <?= $form->field($model, "technique[$lang->lang_code]")
-                                            ->textInput(['value'=>(!$model->isNewRecord)?$getValue['technique']:''])
-                                            ->label('Technique '.$lang->name)
-                                        ?>
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="form-group required-field">
-                                        <?= $form->field($model, "materials[$lang->lang_code]")
-                                            ->textInput(['value'=>(!$model->isNewRecord)?$getValue['materials']:''])
-                                            ->label('Materials '.$lang->name)
-                                        ?>
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="form-group required-field">
-                                        <?= $form->field($model, "size[$lang->lang_code]")
-                                            ->textInput(['value'=>(!$model->isNewRecord)?$getValue['size']:''])
-                                            ->label('Size '.$lang->name)
-                                        ?>
-                                    </div>
-                                </div>
-                            </div>  
-                        </div> 
-                    <?php endforeach;?>
+                            </div>
+
+                        </div>
+                    </div>
+                    <?php endforeach; ?>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="row mt-5">
+
                     <div class="col-md-12">
-                        <?= $form->field($model, 'collection_category_id')->dropDownList($data) ?>
-                    </div>
-                    <div class="col-md-12">
-                        <?= $form->field($model, 'status')->dropDownList($model->statusArray()) ?>
+                        <?= $form->field($model, 'status')->dropDownList([$model->statusArray()]) ?>
                     </div>
                     <div class="col-md-12">
                         <div class="card bg-light">
                             <div class="card-body">
                                 <div id="file" class="col-md-12">
-                                    <?=Html::img($path, [
+                                    <?= Html::img($path, [
                                         'style' => 'width:80%; height:250px; margin-top: 5px; margin-left: -5px; border-radius:5px;',
                                         'class' => '',
-                                    ])?>
+                                    ]) ?>
                                 </div>
                                 <div class="mt-3">
-                                    <?= $form->field($model, 'file')->fileInput(['maxlength' => true,'class'=>'image_input form-control']) ?>
+                                    <?= $form->field($model, 'file')->fileInput(['maxlength' => true, 'class' => 'image_input form-control']) ?>
                                 </div>
                             </div>
                         </div>
                     </div>
-                   
+
                 </div>
             </div>
             <div class="col-md-12">
@@ -129,7 +107,8 @@ if ($model->file != '') {
 
 </div>
 <?php
-$this->registerJs(<<<JS
+$this->registerJs(
+    <<<JS
     
 $(document).ready(function(){
     var fileCollection = new Array();

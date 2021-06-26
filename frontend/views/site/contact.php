@@ -16,7 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
 <script type="text/javascript">
     ymaps.ready(function () {
         var myMap = new ymaps.Map('map', {
-                center: [41.339099, 69.288834],
+                center: [41.322521, 69.245312],
                 zoom: 18
             }, {
                 searchControlProvider: 'yandex#search'
@@ -67,7 +67,7 @@ $this->params['breadcrumbs'][] = $this->title;
                                         <span><img src="/images/placeholder.svg" alt="" style="width: 35px"></span>
                                     <div style="text-align: center"> Manzil</div>
                                     <div style="text-align: center">
-                                        100084, Toshkent shahri, Bog‘ishamol ko‘chasi, 12-uy
+                                        55 Navoiy shoh ko'chasi, Тошкент 700011
                                     </div>
                                 </div>
                            </div>
@@ -79,34 +79,34 @@ $this->params['breadcrumbs'][] = $this->title;
                                         Telefon raqam
                                         </div>
                                    <div style="text-align: center">
-                                       (+998 95) 515-68-68
+                                       (+998 93) 688 84 99
                                    </div>
                                    </p>
                                </div>
                            </div>
                            <div class="col-md-6 mt-3">
-                               <a href="https://t.me/dtmilmiymarkaz" target="_blank">
+                               <a href="#" target="_blank" class="text-dark">
                                    <div class="card p-1 text-center">
                                        <span> <img src="/images/telegram.svg" style="width: 35px" alt=""></span>
                                        <div>
                                            Telegram
                                        </div>
                                        <div class="link">
-                                           <a href="https://t.me/dtmilmiymarkaz" style="text-decoration: none" target="_blank">dtmilmiymarkaz</a>
+                                           <a href="https://t.me/teatrolam" style="text-decoration: none; color: #0b0b0b" target="_blank">Театр Арбоблари уюшмаси</a>
                                        </div>
                                    </div>
                                </a>
                            </div>
                            <div class="col-md-6 mt-3">
-                               <a href="https://corp.uz/webmail/" target="_blank">
+                               <a href="#" target="_blank" class="text-dark">
                                    <div class="card p-1 text-center">
 
-                                       <span> <img src="/images/email.svg" style="width: 35px" alt=""></span>
+                                       <span> <img src="../images/email.svg" style="width: 35px" alt=""></span>
                                        <div>
                                            Elektron pochta
                                        </div>
                                        <div class="link">
-                                           <a href="https://corp.uz/webmail/" target="_blank" style="text-decoration: none">ilmiy_markaz@dtm.uz</a>
+                                           <a href="#" target="_blank" style="text-decoration: none; color: #0b0b0b">info@uztau.uz</a>
                                        </div>
                                    </div>
                                </a>

@@ -5,6 +5,7 @@ return [
         '@npm'   => '@vendor/npm-asset',
         '@filepath' => '@frontend/web',
         '@fronted_domain' => 'http://uztau.loc',
+
     ],
     'vendorPath' => dirname(dirname(__DIR__)) . '/vendor',
     'components' => [

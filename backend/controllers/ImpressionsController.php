@@ -6,6 +6,7 @@ use Yii;
 use common\models\Impressions;
 use backend\models\ImpressionsSearch;
 use common\models\SiteContent;
+use yii\base\BaseObject;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -114,13 +115,26 @@ class ImpressionsController extends Controller
                     'content_id'=>$model->content_id,
                     'language'=>$lang->lang_code
                 ]);
-                $model2->title = $model->title[$lang->lang_code];
-                $model2->description = $model->description[$lang->lang_code];
-                $model2->body = $model->body[$lang->lang_code];
-                $model2->status = $model->status;
-                $model2->file = $model->image;
-                $model2->date = $model->date;
-                $model2->save();
+
+                if(!empty($model2))
+                {
+                    $model2->title = $model->title[$lang->lang_code];
+                    $model2->description = $model->description[$lang->lang_code];
+                    $model2->body = $model->body[$lang->lang_code];
+                    $model2->status = $model->status;
+                    $model2->file = $model->image;
+                    $model2->date = $model->date;
+                    $model2->save();
+                }else{
+                    $model2 = new Impressions();
+                    $model2->title = $model->title[$lang->lang_code];
+                    $model2->description = $model->description[$lang->lang_code];
+                    $model2->body = $model->body[$lang->lang_code];
+                    $model2->status = $model->status;
+                    $model2->file = $model->image;
+                    $model2->date = $model->date;
+                    $model2->save();
+                }
             }
 
             return $this->redirect(['index']);

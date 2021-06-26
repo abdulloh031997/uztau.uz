@@ -73,6 +73,7 @@ class SiteController extends Controller
         return [
             'error' => [
                 'class' => 'yii\web\ErrorAction',
+                'layout'=>false
             ],
             // 'captcha' => [
             //     'class' => 'yii\captcha\CaptchaAction',
@@ -121,10 +122,12 @@ class SiteController extends Controller
         $partner = Partner::find()->where(['status' => 1])->andWhere(['language' => current_lang()])->orderBy(['id' => SORT_DESC])->asArray()->all();
         $about = About::find()->where(['status' => 1])->andWhere(['language' => current_lang()])->orderBy(['id' => SORT_DESC])->asArray()->one();
         $impressions = Impressions::find()->where(['status' => 1])->andWhere(['language' => current_lang()])->orderBy(['id' => SORT_DESC])->asArray()->all();
-        $collection_category = CollectionCategory::find()->andWhere(['language' => current_lang()])->where(['status' => 1])->orderBy(['id' => SORT_DESC])->asArray()->all();
-        $collection = Collection::find()->where(['status' => 1])->orderBy(['id' => SORT_DESC])->asArray()->all();
+        $collection_category_one = CollectionCategory::find()->andWhere(['language' => current_lang()])->where(['status' => 1])->orderBy(['id' => SORT_DESC])->asArray()->one();
+        $collection_category = CollectionCategory::find()->andWhere(['language' => current_lang()])->where(['status' => 1])->orderBy(['id' => SORT_DESC])->limit(5)->asArray()->all();
+        $collection = Collection::find()->where(['status' => 1])->andWhere(['language' => current_lang()])->orderBy(['id' => SORT_DESC])->asArray()->all();
         $team = Team::find()->where(['status' => 1])->andWhere(['language' => current_lang()])->orderBy(['id' => SORT_DESC])->asArray()->all();
-        return $this->render('index', compact('post', 'partner', 'impressions', 'collection_category', 'collection', 'team', 'about', 'slider'));
+        //        print_r($collection_category);
+        return $this->render('index', compact('post', 'partner', 'impressions', 'collection_category', 'collection_category_one', 'collection', 'team', 'about', 'slider'));
     }
     public function actionInner($id)
     {
@@ -139,9 +142,15 @@ class SiteController extends Controller
     {
         return $this->render('team');
     }
+    public function actionSection()
+    {
+        return $this->render('section');
+    }
     public function actionNews()
     {
-        $query =  Post::find()->where(['status' => 1, 'category_id' => 1])->andWhere(['language' => current_lang()]);
+        $query =  Post::find()
+                ->joinWith('category')
+                ->where(['post.status' => 1])->andWhere(['post.language' => current_lang()]);
 
         $count = $query->count();
 

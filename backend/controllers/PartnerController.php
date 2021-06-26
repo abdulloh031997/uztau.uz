@@ -94,7 +94,7 @@ class PartnerController extends Controller
                 $model2->content_id = $SiteContent->id;
                 $model2->save();
             }
-                return $this->redirect(['index']);
+            return $this->redirect(['index']);
         }
 
         return $this->render('create', [
@@ -130,11 +130,21 @@ class PartnerController extends Controller
 
             foreach ($langs as $index => $lang) {
                 $model2 =  Partner::findOne([
-                    'content_id'=>$model->content_id,
-                    'language'=>$lang->lang_code
+                    'content_id' => $model->content_id,
+                    'language' => $lang->lang_code
                 ]);
-                $model2->name = $model->name[$lang->lang_code];
-                $model2->save();
+                if (isset($model2)) {
+                    $model2->name = $model->name[$lang->lang_code];
+                    $model2->save();
+                } else {
+                    $model2 = new Partner();
+                    $model2->language = $lang->lang_code;
+                    $model2->name = $model->name[$lang->lang_code];
+                    $model2->status = $model->status;
+                    $model2->file = $model->image;
+                    $model2->content_id = $model->content_id;
+                    $model2->save();
+                }
             }
 
             return $this->redirect(['index']);
@@ -168,7 +178,7 @@ class PartnerController extends Controller
      */
     protected function findModel($id)
     {
-        if (($model = Partner::findOne(['content_id'=>$id])) !== null) {
+        if (($model = Partner::findOne(['content_id' => $id])) !== null) {
             return $model;
         }
 

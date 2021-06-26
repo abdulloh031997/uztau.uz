@@ -4,6 +4,7 @@ use yii\helpers\Html;
 use kartik\grid\GridView;
 use yii\helpers\ArrayHelper;
 use yii\widgets\Pjax;
+
 /* @var $this yii\web\View */
 /* @var $searchModel backend\models\CollectionCategorySearch */
 /* @var $dataProvider yii\data\ActiveDataProvider */
@@ -33,19 +34,20 @@ $this->params['breadcrumbs'][] = $this->title;
             // 'id',
             // 'content_id',
             'name',
-            [
-                'class'=>'\kartik\grid\DataColumn',
-                'attribute'=>'image',
-                'format' => 'html',
-                'value' => function($model){
-                    if($model->image!=''){
-                        return \yii\helpers\Html::img($model->getLogo(), ['width'=>129,'background'=>'black']);
-                    }
-                    else{
-                        return \yii\helpers\Html::img('https://howfix.net/wp-content/uploads/2018/02/sIaRmaFSMfrw8QJIBAa8mA-article-600x315.png', ['width'=>129,'background'=>'black']);
-                    }
-                }
-            ],
+'url',
+//            [
+//                'class'=>'\kartik\grid\DataColumn',
+//                'attribute'=>'image',
+//                'format' => 'html',
+//                'value' => function($model){
+//                    if($model->image!=''){
+//                        return \yii\helpers\Html::img($model->getLogo(), ['width'=>129,'background'=>'black']);
+//                    }
+//                    else{
+//                        return \yii\helpers\Html::img('https://howfix.net/wp-content/uploads/2018/02/sIaRmaFSMfrw8QJIBAa8mA-article-600x315.png', ['width'=>129,'background'=>'black']);
+//                    }
+//                }
+//            ],
             [
                 'attribute'=>'language',
                 'filter'=>ArrayHelper::map(\common\models\Language::find()->where(['status'=>1])->all(), 'lang_code', 'name'),

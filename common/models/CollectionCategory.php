@@ -33,9 +33,10 @@ class CollectionCategory extends \yii\db\ActiveRecord
     {
         return 'collection_category';
     }
-    public function behaviors(){
+    public function behaviors()
+    {
         return [
-            
+
             [
                 'class' => UploadBehavior::className(),
                 'imageFile' => 'file',
@@ -53,8 +54,8 @@ class CollectionCategory extends \yii\db\ActiveRecord
         return [
             [['content_id', 'status'], 'integer'],
             [['created_at', 'updated_at'], 'safe'],
-            [['language', 'name', 'image'], 'string', 'max' => 255],
-            ['file', 'image', 'skipOnEmpty' => $this->image ? false: true, 'extensions' => 'png, jpeg, jpg, gif', 'maxSize' => 1024*1024*10], // 10 mb
+            [['language', 'name', 'image', 'url'], 'string', 'max' => 255],
+            ['file', 'image', 'skipOnEmpty' => $this->image ? false : true, 'extensions' => 'png, jpeg, jpg, gif', 'maxSize' => 1024 * 1024 * 10], // 10 mb
         ];
     }
 
@@ -79,7 +80,7 @@ class CollectionCategory extends \yii\db\ActiveRecord
     {
         return $this->hasOne(SiteContent::className(), ['id' => 'content_id']);
     }
-    public static function getValue($id,$lang_code)
+    public static function getValue($id, $lang_code)
     {
         $getValue = self::findOne(['content_id' => $id, 'language' => $lang_code]);
         $name = (!empty($getValue->name)) ? $getValue->name : '';
@@ -92,8 +93,7 @@ class CollectionCategory extends \yii\db\ActiveRecord
         foreach ($model as $mode) {
             $langs[] = $mode->language;
         }
-        return implode(' / ',$langs);
-
+        return implode(' / ', $langs);
     }
     public function statusArray($key = null)
     {
@@ -113,12 +113,13 @@ class CollectionCategory extends \yii\db\ActiveRecord
     {
         return $this->hasOne(Language::className(), ['lang_code' => 'language']);
     }
-    public static function getListCategory($lang = null){
-        
+    public static function getListCategory($lang = null)
+    {
+
         if (is_null($lang)) {
             $lang = current_lang();
         }
-        return self::find()->where(['status'=>1])->andWhere(['language'=>$lang])->select("name")
+        return self::find()->where(['status' => 1])->andWhere(['language' => $lang])->select("name")
             ->indexBy('id')->column();
     }
     /**

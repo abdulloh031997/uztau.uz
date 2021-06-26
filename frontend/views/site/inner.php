@@ -1,88 +1,79 @@
 <?php
-    use yii\helpers\Url;
+
+use yii\helpers\Url;
+
 ?>
 <section>
-  <div class="p-5 bg-dark"></div>
-  <div class="p-5 bg-dark">
-    <h5 class="text-white text-center pt-2"><a href="" class="text-warning"><b>Бош саҳифа</b></a> | Янгиликлар</h5>
-  </div>
+    <div class="breadcat__bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3>
+                        <a href="">Bosh sahifa /</a><span> <a href="">Yangilik</a> <span></span></span>
+                    </h3>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 
-  <main id="main">
-    <!-- ======= Blog Section ======= -->
-    <section id="blog" class="blog">
-      <div class="container">
+<section>
+    <div class="container">
+        <div class="row" id="about_left">
+            <div class="col-md-8 shadow py-4 rounded" style="background-color: aliceblue;">
+                <div class="row">
+                    <div class="col-md-12 mb-4">
+                        <div class="card">
+                                <img src="<?= $url . '/' . $post_inner['image'] ?>" width="100%" class="img-fluid rounded">
 
-        <div class="row">
-
-          <div class="col-lg-8 entries">
-
-            <article class="entry entry-single">
-
-              <div class="entry-img">
-                <img src="<?=$url.'/'.$post_inner['image']?>" alt="" class="img-fluid">
-              </div>
-
-              <h2 class="entry-title">
-                <a href="blog-single.html"><?=$post_inner['title']?></a>
-              </h2>
-
-              <div class="entry-meta">
-                <ul>
-                  <li class="d-flex align-items-center"><i class="icofont-user"></i> <a href="blog-single.html">John Doe</a></li>
-                  <li class="d-flex align-items-center"><i class="icofont-wall-clock"></i><a href="blog-single.html"><time datetime="2020-01-01">Jan 1, 2020</time></a></li>
-                </ul>
-              </div>
-
-              <div class="entry-content">
-                <p>
-                <?=$post_inner['body']?>
-                </p>
-              </div>
-
-              <div class="entry-footer clearfix">
-                <div class="float-left">
-                  <i class="icofont-folder"></i>
-                  <ul class="cats">
-                    <li><a href="#">Business</a></li>
-                  </ul>
-
-                  <i class="icofont-tags"></i>
-                  <ul class="tags">
-                    <li><a href="#">Creative</a></li>
-                    <li><a href="#">Tips</a></li>
-                    <li><a href="#">Marketing</a></li>
-                  </ul>
+                            <div class="card-body">
+                                <h5 class="card-title text-center text-uppercase"><?=\Yii::$app->formatter->asDate($post_inner['created_at'], 'yyyy-MM-dd');?></h5>
+                                <div style=" font-weight: 600; color: rgb(16, 113, 135);"><?= $post_inner['title'] ?></div>
+                                <p style="font-family: sans-serif; font-style: normal; font-size: small">
+                                    <?= $post_inner['body'] ?>
+                                </p>
+                                <a class="btn btn-primary btn-sm" style="background-color: #3b5998;" href="#!"
+                                   role="button"><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-primary btn-sm" style="background-color: #ac2bac;" href="#!"
+                                   role="button"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+            </div>
 
-                <div class="float-right share">
-                  <a href="" title="Share on Twitter"><i class="icofont-twitter"></i></a>
-                  <a href="" title="Share on Facebook"><i class="icofont-facebook"></i></a>
-                  <a href="" title="Share on Instagram"><i class="icofont-instagram"></i></a>
+            <div class="col-md-1"></div>
+            <div class="col-md-3">
+                <div class="list-group">
+                    <a href="#" class="list-group-item text-center list-group-item-action bg-warning font-weight-bold"
+                       aria-current="true">
+                        Kategorya
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action">Yangilik</a>
+                    <a href="#" class="list-group-item list-group-item-action">Maqola</a>
+                    <a href="#" class="list-group-item list-group-item-action">Tabrik</a>
+                    <a href="#" class="list-group-item list-group-item-action disabled" tabindex="-1"
+                       aria-disabled="true">Yangi teatir</a>
                 </div>
-
-              </div>
-
-            </article><!-- End blog entry -->
-
-            <div class="blog-author clearfix">
-              <img src="assets/img/blog-author.jpg" class="rounded-circle float-left" alt="">
-              <h4>Jane Smith</h4>
-              <div class="social-links">
-                <a href="https://twitters.com/#"><i class="icofont-twitter"></i></a>
-                <a href="https://facebook.com/#"><i class="icofont-facebook"></i></a>
-                <a href="https://instagram.com/#"><i class="icofont-instagram"></i></a>
-              </div>
-              <p>
-                Itaque quidem optio quia voluptatibus dolorem dolor. Modi eum sed possimus accusantium. Quas repellat voluptatem officia numquam sint aspernatur voluptas. Esse et accusantium ut unde voluptas.
-              </p>
-            </div><!-- End blog author bio -->
-
-          </div><!-- End blog entries list -->
-          <?= \frontend\widgets\NamazWidget::widget() ?>
+                <div class="bobbb p-3 shadow">
+                    <div class="card_image">
+                        <img src="https://mdbcdn.b-cdn.net/img/Photos/Slides/3.jpg" class="img-fluid rounded" alt>
+                    </div>
+                </div>
+                <div>
+                    <div class="socila">
+                        <ul class="navbar-nav d-flex flex-row me-1 navbar___social">
+                            <li class="nav-item me-3 me-lg-0 d-flex">
+                                <a class="nav-link px-2 mx-auto my-5" href="#"><i class="fa-2x fab fa-facebook"></i></a>
+                                <a class="nav-link px-2 mx-auto my-5" href="#"><i
+                                            class="fa-2x fab fa-instagram"></i></a>
+                                <a class="nav-link px-2 mx-auto my-5" href="#"><i class="fa-2x fab fa-telegram"></i></a>
+                                <a class="nav-link px-2 mx-auto my-5" href="#"><i class="fa-2x fab fa-youtube"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
-
-      </div>
-    </section><!-- End Blog Section -->
-
-  </main><!-- End #main -->
+    </div>
+</section>

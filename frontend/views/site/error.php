@@ -7,18 +7,18 @@
 
 use yii\helpers\Html;
 
-$this->title = 'Sizda xatolik yuz berd';
+$this->title = '404';
 ?>
 <!-- Header -->
-<header id="header" class="ex-header">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-12 mt-5 pt-5" style="margin-top: 100px;">
-                <div class="text-white"><?= Html::encode($this->title) ?></div>
-                <div><img src="/images/version.png" class="text-white" alt="" width="100px"></div>
-                <a class="btn-solid-lg page-scroll" href="/">Bosh sahifa</a>
+        <div class="row " style="min-height: 100%;display: flex; justify-content: center;align-items: center">
+            <div class="col-lg-12">
+                <div>
+                    <div class="text-dark shadow" style="font-size:84px;font-family: Sans-serif; font-weight: bold"><?= Html::encode($this->title) ?></div>
+
+                    <a href="/" style="font-weight: bold; padding: 14px 15px;background: #0a47a9;color:#fff; text-decoration: none; font-family: Sans-serif; margin: 20px 10px; border-radius: 10px">Bosh sahifa</a>
+                </div>
             </div> <!-- end of col -->
         </div> <!-- end of row -->
     </div> <!-- end of container -->
-</header> <!-- end of ex-header -->
 <!-- end of header -->

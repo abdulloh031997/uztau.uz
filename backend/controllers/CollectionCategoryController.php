@@ -6,6 +6,7 @@ use Yii;
 use common\models\CollectionCategory;
 use backend\models\CollectionCategorySearch;
 use common\models\SiteContent;
+use yii\base\BaseObject;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
@@ -80,6 +81,7 @@ class CollectionCategoryController extends Controller
                 $model2->name = $model->name[$lang->lang_code];
                 $model2->status = $model->status;
                 $model2->file = $model->image;
+                $model2->url = $model->url;
                 $model2->content_id = $SiteContent->id;
                 $model2->save();
             }
@@ -110,10 +112,22 @@ class CollectionCategoryController extends Controller
                     'content_id'=>$model->content_id,
                     'language'=>$lang->lang_code
                 ]);
-                $model2->name = $model->name[$lang->lang_code];
-                $model2->status = $model->status;
-                $model2->file = $model->image;
-                $model2->save();
+                if (isset($model2)){
+                    $model2->name = $model->name[$lang->lang_code];
+                    $model2->status = $model->status;
+                    $model2->file = $model->image;
+                    $model2->url = $model->url;
+                    $model2->save();
+                }else{
+                    $model2 = new CollectionCategory();
+                    $model2->language = $lang->lang_code;
+                    $model2->name = $model->name[$lang->lang_code];
+                    $model2->status = $model->status;
+                    $model2->url = $model->url;
+                    $model2->file = $model->image;
+                    $model2->save();
+                }
+
             }
 
             return $this->redirect(['index']);

@@ -6,91 +6,122 @@
  * Time: 10:57
  */
 ?>
-
-<header id="header" class="ex-header">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <h2 class="text-white" style="margin-top: 89px">Ilmiy markaz rahbariyati</h2>
-            </div> <!-- end of col -->
-        </div> <!-- end of row -->
-    </div> <!-- end of container -->
-</header> <!-- end of ex-header -->
-<div class="container">
-    <div class="row">
-        <div class="col-md-12 my-5">
-            <div class="card">
-                <div class="box_user">
-                    <div class="team_image" style="background-image: url('/images/baratov.jpg')"></div>
-
-                    <div class="team_right">
-                        <div>
-                            <div class="header-card my-2">
-                                <div class="btn btn-outline-info btn-sm font-weight-bolder">Boshliq</div>
-                            </div>
-                        </div>
-
-                        <div class="fio">
-                            <h4 class="pt-2" style="font-family: Sans-serif">Baratov Akmal Abdumajitovich</h4>
-                            <div>
-                                <span><img src="/images/telephone.svg" style="width: 20px" alt=""></span> &nbsp; <span style="font-family: Sans-serif; font-weight: bold">+998 95 515 68 68</span>
-                            </div>
-                            <div class="mt-3">
-                                <span><img src="/images/email.svg" style="width: 20px" alt=""></span> &nbsp; <span style="font-family: Sans-serif; font-weight: bold">ilmiy_markaz@dtm.uz</span>
-                            </div>
-                            <div class="mt-3">
-                                <span><img src="/images/work.svg" style="width: 20px" alt=""></span> &nbsp; <span style="font-family: Sans-serif; font-weight: bold" class="work_team">  Haftaning seshanba va payshanba kunlari soat 16:00 dan 17:00 gacha</span>
-                            </div>
-                        </div>
-                    </div>
+<section>
+    <div class="breadcat__bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h3>
+                        <a href="">Bosh sahifa /</a><span> Yangilik</span>
+                    </h3>
                 </div>
-                <div class="box_user">
-                    <div class="team_image" style="background-image: url('/images/muhamedov.jpg')"></div>
-                    <div class="team_right">
-                        <div>
-                            <div class="header-card my-2">
-                                <div class="btn btn-outline-info btn-sm font-weight-bolder bosh">Boshqarma boshlig'i</div>
-                            </div>
-                        </div>
-                        <div class="fio">
-                            <h4 class="pt-2" style="font-family: Sans-serif">Muhamedov Asror Asadovich</h4>
-                            <div>
-                                <span><img src="/images/telephone.svg" style="width: 20px" alt=""></span> &nbsp; <span style="font-family: Sans-serif; font-weight: bold">+998 95 515 68 68</span>
-                            </div>
-                            <div class="mt-3">
-                                <span><img src="/images/email.svg" style="width: 20px" alt=""></span> &nbsp; <span style="font-family: Sans-serif; font-weight: bold">ilmiy_markaz@dtm.uz</span>
-                            </div>
-                            <div class="mt-3">
-                                <span><img src="/images/work.svg" style="width: 20px" alt=""></span> &nbsp; <span style="font-family: Sans-serif; font-weight: bold" class="work_team">  Haftaning chorshanba va juma kunlari soat 14:00 dan 17:00 gacha</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="box_user">
-                    <div class="team_image" style="background-image: url('/images/xasanov.jpg')"></div>
-                    <div class="team_right">
-                        <div>
-                            <div class="header-card my-2">
-                                <div class="btn btn-outline-info btn-sm font-weight-bolder">Bosh hisobchi</div>
-                            </div>
-                        </div>
-                        <div class="fio">
-                            <h4 class="pt-2" style="font-family: Sans-serif">Xasanov Bobur Karimovich</h4>
-                            <div>
-                                <span><img src="/images/telephone.svg" style="width: 20px" alt=""></span> &nbsp; <span style="font-family: Sans-serif; font-weight: bold">+998 95 515 68 68</span>
-                            </div>
-                            <div class="mt-3">
-                                <span><img src="/images/email.svg" style="width: 20px" alt=""></span> &nbsp; <span style="font-family: Sans-serif; font-weight: bold">ilmiy_markaz@dtm.uz</span>
-                            </div>
-                            <div class="mt-3">
-                                <span><img src="/images/work.svg" style="width: 20px" alt=""></span> &nbsp; <span style="font-family: Sans-serif; font-weight: bold" class="work_team">  Har kuni soat 18:00 gacha</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </div>
     </div>
-</div>
+</section>
+<section>
+    <div class="container">
+        <div class="row" id="about_left">
+            <div class="col-md-8 shadow py-4 rounded" style="background-color: aliceblue;">
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
+                            <div class="image_team_box">
+                                <div class="box___image" style="background-image: url('https://fondilhom.uz/wp-content/uploads/2019/01/vgcf.jpg');"></div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title text-center text-uppercase">Yoqub Axmedov</h5>
+                                <div style="text-align: end; font-weight: 600; color: rgb(16, 113, 135);">DIREKTOR</div>
+                                <a class="btn btn-primary btn-sm" style="background-color: #3b5998;" href="#!" role="button"><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-primary btn-sm" style="background-color: #ac2bac;" href="#!" role="button"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
+                            <div class="image_team_box">
+                                <div class="box___image" style="background-image: url('https://fondilhom.uz/wp-content/uploads/2019/01/vgcf.jpg');"></div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title text-center text-uppercase">Yoqub Axmedov</h5>
+                                <div style="text-align: end; font-weight: 600; color: rgb(16, 113, 135);">DIREKTOR</div>
+                                <a class="btn btn-primary btn-sm" style="background-color: #3b5998;" href="#!" role="button"><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-primary btn-sm" style="background-color: #ac2bac;" href="#!" role="button"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
+                            <div class="image_team_box">
+                                <div class="box___image" style="background-image: url('https://fondilhom.uz/wp-content/uploads/2019/01/vgcf.jpg');"></div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title text-center text-uppercase">Yoqub Axmedov</h5>
+                                <div style="text-align: end; font-weight: 600; color: rgb(16, 113, 135);">DIREKTOR</div>
+                                <a class="btn btn-primary btn-sm" style="background-color: #3b5998;" href="#!" role="button"><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-primary btn-sm" style="background-color: #ac2bac;" href="#!" role="button"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
+                            <div class="image_team_box">
+                                <div class="box___image" style="background-image: url('https://fondilhom.uz/wp-content/uploads/2019/01/vgcf.jpg');"></div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title text-center text-uppercase">Yoqub Axmedov</h5>
+                                <div style="text-align: end; font-weight: 600; color: rgb(16, 113, 135);">DIREKTOR</div>
+                                <a class="btn btn-primary btn-sm" style="background-color: #3b5998;" href="#!" role="button"><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-primary btn-sm" style="background-color: #ac2bac;" href="#!" role="button"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="card">
+                            <div class="image_team_box">
+                                <div class="box___image" style="background-image: url('https://fondilhom.uz/wp-content/uploads/2019/01/vgcf.jpg');"></div>
+                            </div>
+                            <div class="card-body">
+                                <h5 class="card-title text-center text-uppercase">Yoqub Axmedov</h5>
+                                <div style="text-align: end; font-weight: 600; color: rgb(16, 113, 135);">DIREKTOR</div>
+                                <a class="btn btn-primary btn-sm" style="background-color: #3b5998;" href="#!" role="button"><i class="fab fa-facebook-f"></i></a>
+                                <a class="btn btn-primary btn-sm" style="background-color: #ac2bac;" href="#!" role="button"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="col-md-1"></div>
+            <div class="col-md-3">
+                <div class="list-group">
+                    <a href="#" class="list-group-item text-center list-group-item-action bg-warning font-weight-bold" aria-current="true">
+                        Kategorya
+                    </a>
+                    <a href="#" class="list-group-item list-group-item-action">Yangilik</a>
+                    <a href="#" class="list-group-item list-group-item-action">Maqola</a>
+                    <a href="#" class="list-group-item list-group-item-action">Tabrik</a>
+                    <a href="#" class="list-group-item list-group-item-action disabled" tabindex="-1" aria-disabled="true">Yangi teatir</a>
+                </div>
+                <div class="bobbb p-3 shadow">
+                    <div class="card_image">
+                        <img src="https://mdbcdn.b-cdn.net/img/Photos/Slides/3.jpg" class="img-fluid rounded" alt>
+                    </div>
+                </div>
+                <div>
+                    <div class="socila">
+                        <ul class="navbar-nav d-flex flex-row me-1 navbar___social">
+                            <li class="nav-item me-3 me-lg-0 d-flex">
+                                <a class="nav-link px-2 mx-auto my-5" href="#"><i class="fa-2x fab fa-facebook"></i></a>
+                                <a class="nav-link px-2 mx-auto my-5" href="#"><i class="fa-2x fab fa-instagram"></i></a>
+                                <a class="nav-link px-2 mx-auto my-5" href="#"><i class="fa-2x fab fa-telegram"></i></a>
+                                <a class="nav-link px-2 mx-auto my-5" href="#"><i class="fa-2x fab fa-youtube"></i></a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

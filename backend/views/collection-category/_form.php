@@ -42,7 +42,7 @@ if ($model->file != '') {
                     <!-- Tab item -->
                     <?php foreach ($languages as $index => $lang): ?>
                     <?php if (!$model->isNewRecord) {
-                        $getValue = \common\models\Category::getValue($_GET['id'], $lang->lang_code);
+                        $getValue = \common\models\CollectionCategory::getValue($_GET['id'], $lang->lang_code);
                     }?>
 
                         <div class="tab-pane <?=$index== 0 ? 'active' : '' ?>" id="general<?=$lang->lang_code?>" role="tabpanel">
@@ -62,6 +62,9 @@ if ($model->file != '') {
             </div>
             <div class="col-md-4">
                 <div class="row pt-1 mt-5">
+                    <div class="col-md-12">
+                        <?= $form->field($model, 'url')->textInput() ?>
+                    </div>
                     <div class="col-md-12">
                         <?= $form->field($model, 'status')->dropDownList($model->statusArray()) ?>
                     </div>
